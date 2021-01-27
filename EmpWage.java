@@ -1,12 +1,10 @@
 class EmpDetail{
 	final int PART_TIME = 1;
 	final int FULL_TIME = 2;
-	int EMP_RATE_PER_HR = 20;
-	int MAX_WORK_MONTH = 20;
-	int MAX_WORK_HR = 100;
+
 	
-	public void calculate() {
-		int emp_hr = 8;
+	public void calculate(String company, int EMP_RATE_PER_HR, int MAX_WORK_MONTH, int MAX_WORK_HR) {
+		int emp_hr = 0;
 		int total_emp_hr = 0; 
 		int total_emp_days = 0;
 		int total_wage = 0;
@@ -25,12 +23,12 @@ class EmpDetail{
 			default: emp_hr = 0;
 			}
 			total_emp_hr += emp_hr; 
-			System.out.println("Total Employee Hours: "+total_emp_hr);
-			System.out.println("Total Employee Days: "+total_emp_days);
+//			System.out.println("Total Employee Hours: "+total_emp_hr);
+//			System.out.println("Total Employee Days: "+total_emp_days);
 			
 		}
 		total_wage = total_emp_hr * EMP_RATE_PER_HR; // calculate total employe wage
-		System.out.println("Total Employee Wage: "+total_wage);
+		System.out.println("Company Name: "+company +" || Total Employee Wage: "+total_wage);
 	}
 }
 
@@ -41,10 +39,16 @@ public class EmpWage {
 	public static void main(String[] args) {
 		
 		EmpDetail ed = new EmpDetail(); 
-		ed.calculate();
+		ed.calculate("Reliance Jio" , 20 , 20 , 100);
+		ed.calculate("Tesla" , 20 , 25 , 150);
+		ed.calculate("Infosys" , 25 , 18 , 120);
 	}
 	
 }
+
+
+
+
 
 
 
